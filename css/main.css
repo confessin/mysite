@@ -61,7 +61,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px "Varela Round", Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
@@ -70,7 +70,7 @@ body {
 }
 
 /* ===================
-    ALL: Orange Theme
+    ALL: Black and Green Theme
    =================== */
 
 .header-container {
@@ -89,7 +89,12 @@ body {
 }
 
 .title {
+    font-family: "Reenie Beanie", serif;
     color: white;
+}
+
+.footer {
+    font-size:12px;
 }
 
 /* ==============
@@ -99,6 +104,10 @@ body {
 nav ul {
     margin: 0;
     padding: 0;
+}
+
+a {
+    color: #339933;
 }
 
 nav a {
@@ -144,6 +153,12 @@ nav a:hover {
     color: white;
     padding: 20px 0;
 }
+
+.profile {
+    font-family: 'Reenie Beanie', serif;
+    font-size: 23px;
+}
+
 
 /* ===============
     ALL: IE Fixes
