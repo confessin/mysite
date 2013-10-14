@@ -24,3 +24,9 @@ class ProjectPage(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('projects.html')
         self.response.out.write(template.render({}))
+
+
+class InvitationPage(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('rafi_sehrin.htm')
+        self.response.out.write(template.render({}))

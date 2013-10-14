@@ -1,0 +1,1587 @@
+/* general */
+.narrow {
+	letter-spacing: -3px;
+	padding-right: 3px;
+}
+
+/* Menü */
+#menu {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 46px;
+	width: 100%;
+	min-width: 980px;
+	background-image: url("../img/home/bg-menu.png");
+	background-repeat: repeat-x;
+	z-index: 9999;
+}
+#menu #logo {
+	width: 90px;
+	height: 40px;
+	float: left;
+	background-image: url("../img/home/logo-menu.png");
+	background-repeat: no-repeat;
+	background-position: 25px 8px;
+}
+#menu ul {
+	margin-top: 0px;
+}
+#menu ul#menuitems {
+	float: left;
+}
+#menu #menuitems li {
+	display: inline-block;
+	list-style-type: none;
+	margin-right: 25px;
+}
+#menuitems li a {
+	font-family: "Arvo", serif;
+	font-weight: bold;
+	font-size: 12px;
+	text-decoration: none;
+	color: #FFFFFF;
+	line-height: 40px;
+	vertical-align: text-bottom;
+	padding-right: 0;
+}
+#menu #logindata {
+	float: right;
+	margin-right: 25px;
+}
+#menu #logout {
+	float: right;
+}
+#menu #logout {
+	display: none;
+}
+#menu #logindata a {
+	color: #FFFFFF;
+	font-family: "Advent Pro", sans-serif;
+	font-size: 12px;
+	line-height: 40px;
+	vertical-align: text-bottom;
+	text-decoration: none;
+	background-image: url("../img/home/arrow-white.png");
+	background-repeat: no-repeat;
+	background-position: right 55%;
+	padding-right: 10px;
+}
+#menu #logout a {
+	color: #FFFFFF;
+	font-family: "Advent Pro", sans-serif;
+	font-size: 12px;
+	line-height: 40px;
+	vertical-align: text-bottom;
+	text-decoration: none;
+}
+#menu a:hover {
+	opacity: 0.7;
+}
+ul#lang-select {
+	float: right;
+	line-height: 37px;
+}
+#lang-select a {
+	color: #791246;
+}
+#lang-select.de li.de a, #lang-select.hu li.hu a, #lang-select.en li.en a, #lang-select a:hover {
+	color: #FFFFFF;
+}
+
+/* Scrollindicator */
+#scrollindicator {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 40px;
+	font-family: "Arvo", serif;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 14px;
+	color: #A3276F;
+	text-align: center;
+	line-height: 10px;
+}
+
+/* Allgemeine Definitionen */
+.scene {
+	width: 100%;
+	height: 100%;
+	min-width: 980px;
+	min-height: 500px;
+	max-height: 700px;
+	/* background-color: #FFFFEE; */
+	position: relative;
+	overflow: visible;
+}
+.spacer {
+	height: 100px;
+	width: 100%;
+	position: relative;
+}
+.content {
+	position: absolute;
+}
+.content ul {
+	padding-left: 30px;
+}
+.stage {
+	/* border: 1px blue solid; */
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+}
+.stage div {
+	position: absolute;
+	background-repeat: no-repeat;
+}
+.floor-tmp {
+	background-image: url("../img/boden.png");
+	height: 18px;
+	width: 422px;
+	bottom: 0px;
+}
+.floor {
+	width: 500px;
+	height: 30px;
+	background-repeat: no-repeat;
+}
+.transferDiv {
+	z-index: 10;
+}
+.scene.waiting .transferDiv div,.scene.finished .transferDiv div {
+	visibility: hidden;
+}
+div#img {
+	width: 500px;
+	height: 500px;
+	/* position: absolute;background-color: #c0c0c0; */
+}
+h1 {
+	color: #A3276F;
+	font-size: 75px;
+	position: absolute;
+	line-height: 1em;
+}
+
+.scene a {
+	color: #523119;
+	font-weight: bold;
+	text-decoration: underline;
+	padding-right: 4px;
+	margin-right: 3px;
+	background-image: url("../img/home/arrow-brown.png");
+	background-repeat: no-repeat;
+	background-position: right 60%;
+}
+.scene a:hover {
+	color: #9f5119;
+	background-image: url("../img/home/arrow-light-brown.png");
+}
+/* zum testen */
+/*
+.transferTarget {
+	width: 2px;
+	height: 2px;
+	background-color: red;
+}
+*/
+
+/* **************** */
+/*	   Szenen		*/
+/* **************** */
+
+/* Start */
+.scene#start {
+	margin-bottom: 250px;
+}
+.scene#start h1 {
+	left: 9%;
+	top: 15%
+}
+.scene#start .content {
+	left: 70%;
+	top: 35%;
+	width: 500px;
+	margin-left: -250px;
+}
+.scene#start .content p {
+}
+.scene#start .stage {
+	top: 85%;
+	left: 23%;
+	margin-left: -185px;
+	width: auto;
+}
+.scene#start .stage .guest {
+	left: 160px;
+	width: 105px;
+	height: 309px;
+	top: -299px;
+}
+.scene#start .stage .floor {
+	background-image: url("../img/home/start/boden.png");
+	height: 230px;
+	bottom: -40px;
+}
+.scene#start .stage .papier {
+	width: 80px;
+	height: 95px;
+	left: 250px;
+	top: -50px;
+	background-image: url("../img/home/start/papier.png");
+	visibility: hidden;
+}
+.scene#start .stage.fallen .papier {
+	visibility: visible;
+}
+.scene#start .stage .guest div#img {
+	background-image: url("../img/home/start/gast1.png");
+}
+.scene#start .stage .guest div#img.lesen1 {
+	background-image: url("../img/home/start/gast2-1.png");
+}
+.scene#start .stage .guest div#img.lesen2 {
+	background-image: url("../img/home/start/gast2-2.png");
+}
+.scene#start .stage .guest div#img.lesen3 {
+	background-image: url("../img/home/start/gast2-3.png");
+}
+.scene#start .stage .guest div#img.freuen {
+	background-image: url("../img/home/start/gast3.png");
+}
+.scene#start .stage.fallen .guest div#img {
+	top: -70px;
+	left: -55px;
+	background-image: url("../img/home/start/gast_falling.png");
+}
+.scene#start .stage.fallen .guest div#img.changepose{
+	background-image: url("../img/home/unterkunft/fallen.png");
+}
+
+/* Von A nach B */
+
+.scene#vonanachb {
+	max-height: 100%;
+	margin-bottom: 1500px;
+}
+.scene#vonanachb h1 {
+	left: 25%;
+	top: 150px;
+}
+.scene#vonanachb .content {
+	right: 5%;
+	top: 400px;
+}
+.scene#vonanachb .content p {
+	width: 500px;
+}
+.scene#vonanachb .stage {
+	height: 100%;
+}
+.targetwrapper {
+	bottom: 570px;
+}
+.scene#vonanachb .stage .transferTarget {
+	left: -35px;
+}
+.scene#vonanachb .stage .guest {
+	left: 295px;
+	top: -210px;
+}
+.scene#vonanachb .stage .guest div#img {
+}
+.scene#vonanachb .stage .auto {
+	width: 285px;
+	height: 137px;
+	top: 20px;
+	left: -55px;
+	background-image: url("../img/home/vonanachb/auto-voll.png");
+}
+.scene#vonanachb.waiting .stage .auto, .scene#vonanachb .stage .auto.leer {
+	background-image: url("../img/home/vonanachb/auto-leer.png");
+}
+.pinelements {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.scene#vonanachb .stage .erdecontainer {
+	bottom: -85px;
+	width: 100%;
+	height: 400px;
+}
+.scene#vonanachb .stage .erde {
+	left: -900px;
+	top: 30px;
+}
+.scene#vonanachb .stage .erde .kugel, .scene#vonanachb .stage .erde .zugcontainer {
+	width: 2030px;
+	height: 2030px;
+}
+.scene#vonanachb .stage .erde .kugel {
+	background-image: url("../img/home/vonanachb/weltkugel.png");
+	background-position: 275px 0px;
+}
+.scene#vonanachb .stage .erde .zugcontainer {
+	z-index: 1;
+}
+.scene#vonanachb .stage .erde .zug {
+	width: 85px;
+	height: 80px;
+	left: 430px;
+	top: 395px;
+	margin-left: -50px;
+	margin-top: -73px;
+	background-image: url("../img/home/vonanachb/bahn.png");
+}
+.scene#vonanachb .stage .erde .wagen {
+	width: 70px;
+	height: 60px;
+	left: 430px;
+	top: 395px;
+	margin-left: -40px;
+	margin-top: -53px;
+	background-image: url("../img/home/vonanachb/haenger.png");
+}
+.scene#vonanachb .stage .bahn:nth-child(1) {
+	z-index: 50;
+}
+.scene#vonanachb .stage .bahn:nth-child(2) {
+	z-index: 49;
+}
+.scene#vonanachb .stage .bahn:nth-child(3) {
+	z-index: 48;
+}
+.scene#vonanachb .stage .bahn:nth-child(4) {
+	z-index: 47;
+}
+.scene#vonanachb .stage .bahn:nth-child(5) {
+	z-index: 46;
+}
+
+.scene#vonanachb .stage .flugzeug {
+	width: 202px;
+	height: 82px;
+	top: -250px;
+	left: -202px;
+	background-image: url("../img/home/vonanachb/flugzeug.png");
+	z-index: -1;
+}
+.scene#vonanachb .stage .guest div#img.fallen {
+	top: -70px;
+	left: -55px;
+	background-image: url("../img/home/start/gast_falling.png");
+}
+.scene#vonanachb .stage .guest div#img.insbett {
+	background-image: url("../img/home/unterkunft/fallen.png");
+}
+.scene#vonanachb .stage.onlyguest .auto, .scene#vonanachb .stage.onlyguest .flugzeug, .scene#vonanachb .stage.onlyguest .erde, .scene#vonanachb .stage.onlyguest .papierflieger {
+	display: none;
+}
+.scene#vonanachb .stage .papierflieger {
+	width: 81px;
+	height: 29px;
+	top: -100px;
+	left: -100px;
+	background-image: url("../img/home/vonanachb/papierflieger.png");
+}
+
+/* Vor Ort */
+
+.scene#vorort {
+	margin-bottom: 1200px;
+}
+.scene#vorort h1 {
+	left: 2%;
+	top: 0px;
+}
+.scene#vorort .content {
+	left: 2%;
+	top: 150px;
+}
+.scene#vorort .content p {
+	width: 370px;
+}
+.scene#vorort .stage {
+	top: 100px;
+}
+.scene#vorort .pinelements {
+	width: 100%;
+	height: 700px;
+	overflow: hidden;
+}
+.scene#vorort .stage .transferTarget {
+	top: 170px;
+	margin-left: -130px;
+	left: 69%;
+}
+.scene#vorort .stage .guest {
+	left: 130px;
+	top: -130px;
+}
+.scene#vorort .stage.aussteigen .guest div#img {
+	background-image: url("../img/home/vorort/gast_krabbeln.png");
+}
+.scene#vorort .stage.fallen .guest div#img {
+	background-image: url("../img/home/start/gast_falling.png");
+}
+.scene#vorort .stage .floor {
+	width: 632px;
+	height: 44px;
+	top: 300px;
+	margin-left: -300px;
+	left: 69%;
+	background-image: url("../img/home/vorort/boden.png");
+}
+.scene#vorort .stage .schienen {
+	width: 350px;
+	height: 155px;
+	left: 315px;
+	top: -14px;
+	background-image: url("../img/home/vorort/gleise.png");
+}
+.scene#vorort .stage .strasse {
+	width: 275px;
+	height: 110px;
+	top: 18px;
+	left: 33px;
+	background-image: url("../img/home/vorort/strasse.png");
+}
+.scene#vorort .stage .auto {
+	width: 250px;
+	height: 190px;
+	top: -151px;
+	left: 37px;
+	z-index: 15;
+	background-image: url("../img/home/vorort/auto_voll.png");
+}
+.scene#vorort.waiting .stage .auto, .scene#vorort .stage.aussteigen .auto {
+	background-image: url("../img/home/vorort/auto_leer.png");
+}
+.scene#vorort .stage.tuer .auto {
+	background-image: url("../img/home/vorort/auto_leer_tueroffen.png");
+}
+.scene#vorort .stage .tram {
+	width: 165px;
+	height: 310px;
+	top: -301px;
+	left: 395px;
+	background-image: url("../img/home/vorort/tram.png");
+}
+.scene#vorort .stage .fahrgast {
+	width: 115px;
+	height: 165px;
+	top: 126px;
+	left: -89px;
+	display: none;
+}
+.scene#vorort .stage .tram.mitfahrgast .fahrgast {
+	display: block;
+}
+.scene#vorort .stage .fahrgast {
+	background-image: url("../img/home/vorort/fahrgast-1.png");
+}
+.scene#vorort .stage .fahrgast.winken {
+	background-image: url("../img/home/vorort/fahrgast-2.png");
+}
+
+/* Unterkunft */
+
+.scene#unterkunft {
+	margin-bottom: 400px;
+}
+.scene#unterkunft h1 {
+	left: 10%;
+	top: 0px;
+}
+.scene#unterkunft .content {
+	right: 5%;
+	top: 150px;
+	width: 350px;
+}
+.lang-en .scene#unterkunft .content {
+	top: 210px;
+}
+.scene#unterkunft .content p {
+}
+.scene#unterkunft .content ul {
+	margin: 0 0 20px 0;
+}
+.scene#unterkunft .stage {
+	top: 150px;
+}
+.scene#unterkunft .stage .guest {
+	left: 130px;
+	top: 15px;
+}
+.scene#unterkunft .stage.fallen .guest div#img {
+	width: 325px;
+	height: 400px;
+	background-image: url("../img/home/unterkunft/fallen.png");
+}
+.scene#unterkunft .stage.fallen .guest.changepose div#img {
+	background-image: url("../img/home/start/gast_falling.png");
+}
+.scene#unterkunft .stage .floor {
+	width: 565px;
+	height: 295px;
+	top: 100px;
+	left: 25%;
+	margin-left: -220px;
+	background-image: url("../img/home/unterkunft/boden.png");
+}
+.scene#unterkunft .stage .bett {
+	width: 510px;
+	height: 290px;
+	left: -25px;
+	top: -20px;
+	background-image: url("../img/home/unterkunft/bett-schlafen1.png");
+}
+.scene#unterkunft .stage.schlafloop .bett {
+	background-image: url("../img/home/unterkunft/bett-schlafen2.png");
+}
+.scene#unterkunft.waiting .stage .bett {
+	background-image: url("../img/home/unterkunft/bett.png");
+}
+.scene#unterkunft .stage.klingeln .bett {
+	background-image: url("../img/home/unterkunft/bett-erschrecken.png");
+}
+.scene#unterkunft .stage.fallen .bett {
+	background-image: url("../img/home/unterkunft/bett-kippen.png");
+}
+
+.scene#unterkunft .stage .wecker {
+	width: 100px;
+	height: 90px;
+	left: -27px;
+	top: 198px;
+	background-image: url("../img/home/unterkunft/wecker.png");
+}
+.scene#unterkunft .stage.klingeln .wecker {
+	background-image: url("../img/home/unterkunft/wecker-klingeln1.png");
+}
+.scene#unterkunft .stage.klingeln .wecker.loop{
+	background-image: url("../img/home/unterkunft/wecker-klingeln2.png");
+}
+.scene#unterkunft .stage .zeiger {
+	width: 35px;
+	height: 6px;
+	left: 24px;
+	top: 48px;
+}
+.scene#unterkunft .stage .zeiger.gross {
+	background-image: url("../img/home/unterkunft/zeiger-gross.png");
+}
+.scene#unterkunft .stage .zeiger.klein {
+	background-image: url("../img/home/unterkunft/zeiger-klein.png");
+}
+
+/* Geld wechseln */
+
+.scene#geld {
+	margin-bottom: 800px;
+}
+.scene#geld h1 {
+	left: 10%;
+	top: 0px;
+}
+.scene#geld .content {
+	left: 78%;
+	top: 150px;
+	width: 400px;
+	margin-left: -200px;
+	
+}
+.scene#geld .content p {
+}
+.scene#geld .stage {
+	
+}
+.scene#geld .pinelements {
+	height: 600px;
+	width: 100%;
+}
+.scene#geld .stage .guest {
+	left: 26%;
+	margin-left: -70px;
+	top: 80px;
+}
+.scene#geld .stage .transferTarget {
+	left: 26%;
+	margin-left: -50px;
+	top: 80px;
+}
+.scene#geld .stage .guest div#img {
+	background-image: url("../img/home/geld/gast-landen.png");
+}
+.scene#geld .stage.waiting .guest div#img {
+	background-image: none;
+}
+.scene#geld .stage .guest div#img.werfen {
+	background-image: url("../img/home/geld/gast-wirbeln1.png");
+}
+.scene#geld .stage .guest div#img.werfen.werfen2 {
+	background-image: url("../img/home/geld/gast-wirbeln2.png");
+}
+.scene#geld .stage .guest div#img.kippen {
+	background-image: url("../img/home/geld/gast-kippen.png");
+}
+.scene#geld .stage.fallen.changepose .guest div#img {
+	width: 500px;
+	background-image: url("../img/home/unterkunft/fallen.png");
+}
+.scene#geld .stage.fallen .guest div#img {
+	width: 214px;
+	height: 388px;
+	background-image: url("../img/home/start/gast_falling.png");
+}
+.scene#geld .stage .guest.surprise div#img {
+	background-image: url("../img/home/geld/gast-surprised.png");
+}
+.scene#geld.talking .stage.maidsturn .guest div#img {
+	background-image: url("../img/home/geld/gast-listening.png");
+}
+.scene#geld.talking .stage.maidsturn .doorcontainer .maid {
+	background-image: url("../img/home/geld/maid-pointing.png");
+}
+.scene#geld.talking .stage .guest div#img {
+	background-image: url("../img/home/geld/gast-answering.png");
+}
+.scene#geld .stage .floor {
+	width: 585px;
+	height: 105px;
+	top: 480px;
+	left: 26%;
+	margin-left: -260px;
+	background-image: url("../img/home/geld/boden.png");
+}
+.scene#geld .stage .wanne {
+	width: 375px;
+	height: 320px;
+	left: 112px;
+	top: -261px;
+	background-image: url("../img/home/geld/wanne.png");
+}
+.scene#geld .stage .doorcontainer {
+	width: 100%;
+	height: 600px;
+	overflow: hidden;
+}
+.scene#geld .stage .door {
+	width: 335px;
+	height: 430px;
+	top: 100px;
+	right: -80px;
+	background-image: url("../img/home/geld/tuer_zu.png");
+}
+.scene#geld .stage .door.open {
+	background-image: url("../img/home/geld/tuer_auf.png");
+}
+.scene#geld .stage .opening {
+	width: 400px;
+	height: 350px;
+	top: 170px;
+	right: 120px;
+	overflow: hidden;
+}
+.scene#geld .stage .opening .maid {
+	width: 133px;
+	height: 277px;
+	top: 40px;
+	background-image: url("../img/home/geld/maid.png");
+}
+.scene#geld .stage .sprechblasen {
+	width: 100%;
+	display: none;
+}
+.scene#geld.talking .stage .sprechblasen {
+	display: block;
+}
+.scene#geld .stage .sprechblasen .gast {
+	width: 175px;
+	height: 95px;
+	left: 7px;
+	top: 120px;
+	visibility: hidden;
+	background-image: url("../img/home/geld/sprechblase-klein.png");
+}
+.scene#geld .stage .sprechblasen .maid {
+	width: 165px;
+	height: 150px;
+	right: 40px;
+	top: 50px;
+	visibility: visible;
+	background-image: url("../img/home/geld/sprechblase-gross.png");
+}
+.scene#geld .stage .sprechblasen .maid .textcontainer {
+	width: 100%;
+	height: 91px;
+}
+.scene#geld .stage .sprechblasen .gast .textcontainer {
+	width: 100%;
+	height: 60px;
+}
+.scene#geld .stage .sprechblasen .textcontainer * {
+	height: 100%;
+	text-align: center;
+	color: #523119;
+	font-family: "Arvo", serif;
+	font-weight: bold;
+	font-size: 20px;
+	letter-spacing: 0em;
+}
+.scene#geld .stage .sprechblasen .textcontainer div {
+	width: 100%;
+	display: none;
+}
+
+
+.scene#sprache {
+	margin-bottom: 1750px;
+}
+.scene#sprache h1 {
+	left: 50%;
+	width: 570px;
+	margin-left: -250px;
+}
+.scene#sprache .content {
+	left: 56%;
+	top: 210px;
+	width: 46%;
+	margin-left: -23%;
+}
+.scene#sprache .content p {
+	
+}
+.scene#sprache table {
+	width: 100%;
+	margin: 20px 0 30px -15px;
+}
+.scene#sprache table th {
+	text-align: left;
+	padding: 5px 5px 3px 15px;
+}
+.scene#sprache table td.elem1 {
+	background: url("../img/home/geld/table-line.png") no-repeat 0 0;
+}
+.scene#sprache table td.elem2 {
+	background: url("../img/home/geld/table-line.png") no-repeat 50% 0;
+}
+.scene#sprache table td.elem3 {
+	background: url("../img/home/geld/table-line.png") no-repeat 100% 0;
+}
+.scene#sprache table td {
+	padding: 7px 5px 3px 15px;
+	width: 33%;
+}
+
+/* Location */
+
+.scene#location {
+	margin-bottom: 1200px;
+}
+.scene#location h1 {
+	left: 10%;
+	top: 0px;
+}
+.scene#location .contentcontainer {
+	width: 100%;
+	height: 1000px;
+	overflow: hidden;
+	position: absolute;
+}
+.scene#location .content {
+	left: 54%;
+	top: 150px;
+	width: 370px;
+	margin-left: 50px;
+}
+
+.scene#location .mapcontainer {
+	position: absolute;
+	top: 505px;
+	left: 54%;
+	margin-left: 50px;
+}
+.scene#location .convoymap {
+	width: 370px;
+	height: 380px;
+	margin: 20px 0 20px 0;
+	position: relative;
+}
+.scene#location .maplink {
+	top: 410px;
+}
+.scene#location .convoydot {
+	width: 10px;
+	height: 10px;
+	top: 70px;
+	left: 358px;
+	margin: -5px 0 0 -5px;
+	position: absolute;
+	background: url("../img/home/location/convoy_dot.png") no-repeat;
+}
+.scene#location .stage {
+	
+}
+.scene#location .pinelements {
+	height: 600px;
+	width: 100%;
+}
+.scene#location .stage .publikum {
+	width: 310px;
+	height: 160px;
+	top: 200px;
+	left: 5px;
+	background-image: url("../img/home/location/publikum.png");
+}
+.scene#location .stage .transferTarget {
+	top: 213px;
+	left: 276px;
+}
+.scene#location .stage .guest {
+	z-index: -2;
+}
+.scene#location .stage .guest div#img {
+	width: 210px;
+}
+.scene#location .stage.fallen .guest div#img {
+	background-image: url("../img/home/start/gast_falling.png");
+}
+.scene#location .stage .stuhl {
+	width: 110px;
+	height: 145px;
+	left: 271px;
+	top: 13px;
+	background-image: url("../img/home/location/stuhl-mitgast.png");
+}
+.scene#location.waiting .stage .stuhl, .scene#location .stage.fallen .stuhl {
+	background-image: url("../img/home/location/stuhl-leer.png");
+}
+.scene#location .stage .paar {
+	width: 140px;
+	height: 160px;
+	left: 440px;
+	top: 200px;
+	background-image: url("../img/home/location/paar.png");
+}
+.scene#location .stage .bus {
+	width: 420px;
+	height: 225px;
+	left: -25px;
+	top: 157px;
+	background-image: url("../img/home/location/bus.png");
+}
+.scene#location .stage .auto {
+	width: 455px;
+	height: 135px;
+	left: 208px;
+	top: 267px;
+	background-image: url("../img/home/location/auto.png");
+}
+
+/* Ablauf */
+.scene#ablauf {
+	margin-bottom: 500px;
+}
+.scene#ablauf h1 {
+	left: 70%;
+	width: 580px;
+	margin-left: -290px;
+}
+.scene#ablauf .content {
+	left: 77%;
+	width: 380px;
+	margin-left: -160px;
+	top: 210px;
+}
+.scene#ablauf .content p {
+}
+.scene#ablauf table {
+	margin-top: 20px;
+}
+.scene#ablauf td {
+	vertical-align: top;
+	padding: 12px 8px 0 0;
+}
+.scene#ablauf tr.follow td {
+	padding-top: 2px;
+}
+.scene#ablauf td:first-child {
+	font-weight: bold;
+	white-space: nowrap;
+}
+.scene#ablauf tr.follow td:first-child {
+	font-weight: normal;
+}
+
+/* Traditionen */
+
+.scene#traditionen {
+	margin-bottom: 1600px;
+}
+.scene#traditionen h1 {
+	left: 4%;
+	top: 100px;
+}
+.scene#traditionen .content {
+	left: 70%;
+	top: 310px;
+	width: 500px;
+	margin-left: -250px;
+}
+.lang-de .scene#traditionen .content {
+	top: 250px;
+}
+.scene#traditionen .content p {
+	width: 90%;
+}
+.scene#traditionen .stage {
+	
+}
+.scene#traditionen .pinelements {
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 700px;
+	overflow: hidden;
+}
+.scene#traditionen .stage .transferTarget {
+	left: 22%;
+	margin-left: -130px;
+	top: 150px;
+}
+.scene#traditionen .stage .guestcontainer {
+	left: 22%;
+	margin-left: -130px;
+	top: 75px;
+}
+.scene#traditionen .stage .guest {
+}
+.scene#traditionen .stage .guest div#img {
+	top: 149px;
+	left: 68px;
+	background-image: url("../img/home/traditionen/gast-normal.png");
+}
+.scene#traditionen .stage .guest div#img.inyourface {
+	background-image: url("../img/home/traditionen/gast-insgesicht.png");
+}
+.scene#traditionen .stage .guest div#img.verlegen {
+	background-image: url("../img/home/traditionen/gast-verlegen.png");
+}
+.scene#traditionen .stage.seifenblasen .guest div#img {
+	background-image: url("../img/home/traditionen/gast-faengtpustefix.png");
+}
+.scene#traditionen .stage .guest div#img.blasenmachen {
+	background-image: url("../img/home/traditionen/gast-machtblasen.png");
+}
+.scene#traditionen .stage.seifenblasen .pustefix {
+	display: none;
+}
+.scene#traditionen .stage .thrown .bubble {
+	width: 80px;
+	height: 100px;
+	background-image: url("../img/home/traditionen/bubble.png");
+}
+.scene#traditionen .stage .thrown .bubble.pop {
+	background-image: url("../img/home/traditionen/bubble-pop.png");
+}
+.scene#traditionen .stage .guest .floor {
+	top: 439px;
+	background-image: url("../img/home/dresscode/boden.png");
+}
+.scene#traditionen .stage .thrown {
+	left: -250px;
+	top: 75px;
+}
+.scene#traditionen .stage .blumenstrauss {
+	width: 120px;
+	height: 100px;
+	left: 0px;
+	top: 100px;
+	background-image: url("../img/home/traditionen/blumenstrauss.png");
+}
+.scene#traditionen .stage .strumpfband {
+	width: 45px;
+	height: 50px;
+	left: 0px;
+	top: 200px;
+	background-image: url("../img/home/traditionen/strumpfband.png");
+}
+.scene#traditionen .stage .pustefix {
+	width: 45px;
+	height: 65px;
+	left: 0px;
+	top: 50px;
+	background-image: url("../img/home/traditionen/pustefix.png");
+}
+
+/* Dresscode */
+
+.scene#dresscode {
+	margin-bottom: 950px;
+}
+.scene#dresscode h1 {
+	left: 32%;
+	top: 500px;
+	width: 600px;
+	margin-left: -200px;
+}
+.lang-hu .scene#dresscode h1 {
+	width: 500px;
+}
+.scene#dresscode .content {
+	left: 32%;
+	top: 710px;
+	width: 400px;
+	margin-left: -200px;
+}
+.scene#dresscode .content p {
+	width: 100%;
+}
+.scene#dresscode .stage {
+	
+}
+.scene#dresscode .pinelements {
+	height: 600px;
+	width: 100%;
+	overflow: hidden;
+}
+.scene#dresscode .stage .guestcontainer {
+	left: 80%;
+	margin-left: -180px;
+	top: 75px;
+	width: 600px;
+	height: 500px;
+}
+.scene#dresscode .stage .transferTarget {
+	left: 80%;
+	margin-left: -180px;
+	top: 75px;
+}
+.scene#dresscode.waiting .stage .guest .floor {
+	visibility: visible;
+}
+.scene#dresscode .stage .guest div#img {
+	background-image: url("../img/home/dresscode/gast-normal.png");
+}
+.scene#dresscode .stage.outfit1 .guest div#img {
+	background-image: url("../img/home/dresscode/gast-zirkus.png");
+}
+.scene#dresscode .stage.outfit2 .guest div#img {
+	background-image: url("../img/home/dresscode/gast-ballerina.png");
+}
+.scene#dresscode .stage.outfit3 .guest div#img {
+	background-image: url("../img/home/dresscode/gast-hase.png");
+}
+.scene#dresscode .stage.outfit4 .guest div#img {
+	background-image: url("../img/home/dresscode/gast-smoking.png");
+}
+.scene#dresscode .stage .guest .floor {
+	top: 364px;
+	background-image: url("../img/home/dresscode/boden.png");
+}
+.scene#dresscode .stage .klamotte {
+	width: 185px;
+	height: 340px;
+	left: -185px;
+	top: 20px;
+}
+.scene#dresscode .stage.outfit4 .klamotte {
+	display: none;
+}
+.scene#dresscode .stage .klamotte {
+	background-image: url("../img/home/dresscode/outfit-zirkus.png");
+}
+.scene#dresscode .stage.outfit1 .klamotte {
+	background-image: url("../img/home/dresscode/outfit-ballerina.png");
+}
+.scene#dresscode .stage.outfit2 .klamotte {
+	background-image: url("../img/home/dresscode/outfit-hase.png");
+}
+.scene#dresscode .stage.outfit3 .klamotte {
+	background-image: url("../img/home/dresscode/outfit-smoking.png");
+}
+.scene#dresscode .stage .klamotte .streifen {
+	width: 70px;
+	height: 15px;
+	top: 170px;
+	left: 110px;
+	background-image: url("../img/home/dresscode/bewegungsstreifen.png");
+}
+
+/* Mitbringen */
+
+.scene#mitbringen {
+	margin-bottom: 1950px;
+}
+.scene#mitbringen h1 {
+	left: 28%;
+	top: 550px;
+	width: 750px;
+	margin-left: -225px
+}
+.scene#mitbringen .content {
+	left: 28%;
+	top: 760px;
+	width: 450px;
+	margin-left: -225px
+}
+.scene#mitbringen .content p {
+	width: 90%;
+}
+.scene#mitbringen .stage {
+	
+}
+.scene#mitbringen .pinelements {
+	left: 0px;
+	top: -25px;
+	width: 100%;
+	height: 650px;
+	overflow: hidden;
+}
+.scene#mitbringen .stage .transferTarget {
+	right: 400px;
+	top: 105px;
+}
+.scene#mitbringen .stage .guest {
+	top: -364px;
+}
+.scene#mitbringen .stage .guest div#img {
+	left: -134px;
+	top: 28px;
+	background-image: url("../img/home/mitbringen/gast-smoking.png");
+}
+.scene#mitbringen .stage .guest div#img.buecken {
+	background-image: url("../img/home/mitbringen/gast-buecken.png");
+}
+.scene#mitbringen .stage.lampe .guest div#img.inderhand {
+	background-image: url("../img/home/mitbringen/gast-stehlampe.png");
+}
+.scene#mitbringen .stage.amboss .guest div#img.inderhand {
+	background-image: url("../img/home/mitbringen/gast-amboss.png");
+}
+.scene#mitbringen .stage.katze .guest div#img.inderhand {
+	background-image: url("../img/home/mitbringen/gast-katze.png");
+}
+.scene#mitbringen .stage.kamera .guest div#img.inderhand {
+	background-image: url("../img/home/mitbringen/gast-kamera.png");
+}
+.scene#mitbringen .stage .guest div#img.werfen {
+	background-image: url("../img/home/mitbringen/gast-werfen.png");
+}
+.scene#mitbringen .stage.kamera .guest div#img.werfen {
+	background-image: url("../img/home/mitbringen/gast-fotografiert.png");
+}
+.scene#mitbringen.waiting .stage .floor {
+	visibility: hidden;
+}
+.scene#mitbringen .stage .pinelements .floor {
+	right: 131px;
+	top: 564px;
+	width: 270px;
+	background-image: url("../img/home/mitbringen/boden.png");
+}
+.scene#mitbringen .stage .koffer {
+	left: 186px;
+	top: -113px;
+	width: 185px;
+	height: 145px;
+	background-image: url("../img/home/mitbringen/koffer.png");
+	visibility: hidden;
+}
+.scene#mitbringen.waiting .stage .koffer {
+	display: none;
+}
+.scene#mitbringen .stage .lampe {
+	width: 80px;
+	height: 330px;
+	background-image: url("../img/home/mitbringen/fliegen-stehlampe.png");
+	display: none;
+}
+.scene#mitbringen .stage .amboss {
+	width: 235px;
+	height: 145px;
+	background-image: url("../img/home/mitbringen/fliegen-amboss.png");
+	display: none;
+}
+.scene#mitbringen .stage .katze {
+	width: 170px;
+	height: 115px;
+	background-image: url("../img/home/mitbringen/fliegen-katze.png");
+	display: none;
+}
+.scene#mitbringen .stage .blitz {
+	background-image: none;
+}
+.scene#mitbringen .stage.photos .blitz {
+	width: 90px;
+	height: 60px;
+	left: 0px;
+	top: -230px;
+	background-image: url("../img/home/mitbringen/blitz.png");
+	visibility: hidden;
+}
+.scene#mitbringen .stage .pinpaar {
+	top: 1300px;
+	left: 19%;
+	margin-left: -160px;
+	width: 500px;
+}
+.scene#mitbringen .stage .pinpaar .floor {
+	width: 390px;
+	top: 350px;
+	left: 0px;
+	background-image: url("../img/home/rsvp/boden.png");
+}
+.scene#mitbringen .stage .pinpaar .paar {
+	top: -315px;
+	left: 100px;
+}
+.scene#mitbringen .stage .pinpaar .paar div#img{
+	background-image: url("../img/home/rsvp/paar-normal.png");
+}
+.scene#mitbringen .stage.photos .paar div#img{
+	background-image: url("../img/home/rsvp/paar-smile.png");
+}
+.scene#mitbringen .stage.photos .flash {
+	background: #FFFFFF;
+	width: 100%;
+	visibility: hidden;
+}
+
+/* RSVP */
+
+.scene#rsvp {
+	margin-bottom: 250px;
+}
+.scene#rsvp h1 {
+	left: 73%;
+	top: 50px;
+	width: 605px;
+	margin-left: -340px;
+}
+.scene#rsvp .content {
+	left: 73%;
+	top: 260px;
+	width: 470px;
+	margin-left: -250px;
+}
+.scene#rsvp .switch {
+	display: none;
+}
+.scene#rsvp.rsvp-y.singular .switch.rsvp-y.singular {
+	display: block;
+}
+.scene#rsvp.rsvp-y.plural .switch.rsvp-y.plural {
+	display: block;
+}
+.scene#rsvp.rsvp-n.singular .switch.rsvp-n.singular {
+	display: block;
+}
+.scene#rsvp.rsvp-n.plural .switch.rsvp-n.plural {
+	display: block;
+}
+.scene#rsvp.rsvp-m.singular .switch.rsvp-m.singular {
+	display: block;
+}
+.scene#rsvp.rsvp-m.plural .switch.rsvp-m.plural {
+	display: block;
+}
+.scene#rsvp.singular label .switch.singular {
+	display: block;
+}
+.scene#rsvp.plural label .switch.plural {
+	display: block;
+}
+.scene#rsvp .stage {
+	
+}
+.scene#rsvp .stage .transferTarget {
+	left: 19%;
+	margin-left: -160px;
+}
+.scene#rsvp .stage .pinpaar {
+	top: 0px;
+	left: 19%;
+	margin-left: -200px;
+	width: 500px;
+	height: 1000px;
+	overflow: hidden;
+}
+.scene#rsvp .stage .pinpaar .floor {
+	width: 390px;
+	top: 350px;
+	left: 40px;
+	background-image: url("../img/home/rsvp/boden.png");
+}
+.scene#rsvp.rsvp-y  .stage .pinpaar .paar {
+	top: -338px;
+	left: -85px;
+}
+.scene#rsvp .stage .pinpaar .paar, .scene#rsvp.rsvp-y  .stage.normal .pinpaar .paar {
+	top: -315px;
+	left: 100px;
+}
+.scene#rsvp .stage .paar div#img, .scene#rsvp.rsvp-m .stage .paar div#img {
+	background-image: url("../img/home/rsvp/paar-normal.png");
+}
+.scene#rsvp.rsvp-y .stage .paar div#img{
+	background-image: url("../img/home/rsvp/paar-happy1.png");
+}
+.scene#rsvp.rsvp-y .stage.loop .paar div#img{
+	background-image: url("../img/home/rsvp/paar-happy2.png");
+}
+.scene#rsvp.rsvp-n .stage .paar div#img{
+	background-image: url("../img/home/rsvp/paar-sad1.png");
+}
+.scene#rsvp.rsvp-n .stage.loop .paar div#img{
+	background-image: url("../img/home/rsvp/paar-sad2.png");
+}
+.scene#rsvp .stage.normal .paar div#img {
+	background-image: url("../img/home/rsvp/paar-normal.png");
+}
+/* form */
+.scene#rsvp form div#rsvp2 {
+	display: none;
+}
+.scene#rsvp.rsvp-y form div#rsvp2 {
+	display: block;
+}
+.scene#rsvp form div#rsvp-singular, .scene#rsvp form div#rsvp-plural {
+	display: none;
+}
+.scene#rsvp.singular form div#rsvp-singular {
+	display: block;
+}
+.scene#rsvp.plural form div#rsvp-plural {
+	display: block;
+}
+.scene#rsvp form div#rsvp1 {
+	margin-top: 30px;
+}
+.scene#rsvp form div#rsvp1 label {
+	line-height: 1.1em;
+	min-height: 36px;
+	margin-bottom: 5px;
+}
+.scene#rsvp form div#rsvp2 {
+	margin-bottom: 20px;
+	margin-left: 50px;
+}
+.scene#rsvp form div#rsvp2 #bringsomeone label {
+	line-height: auto;
+	min-height: auto;
+	margin-bottom: auto;
+}
+.scene#rsvp form div#rsvp2 #bringsomeone input {
+	width: 145px;
+}
+.scene#rsvp form p.primarybegleitung, .scene#rsvp.begleitung_only form p.primaryguest {
+	display: none;
+}
+.scene#rsvp.begleitung_only form p.primarybegleitung, .scene#rsvp form p.primaryguest {
+	display: block;
+}
+
+/* Adressdaten */
+
+.scene#adressdaten {
+	margin-bottom: 600px;
+}
+.scene#adressdaten h1 {
+	left: 70%;
+	top: 50px;
+	width: 625px;
+	margin-left: -340px;
+}
+.scene#adressdaten .content {
+	left: 70%;
+	top: 260px;
+	width: 525px;
+	margin-left: -250px;
+}
+.scene#adressdaten .content p {
+}
+.scene#adressdaten .switch {
+	display: none;
+}
+.scene#adressdaten.singular .switch.singular {
+	display: block;
+}
+.scene#adressdaten.plural .switch.plural {
+	display: block;
+}
+.scene#adressdaten .stage {
+	
+}
+.scene#adressdaten form div#rsvp3 {
+	margin-top: 30px;
+	width: 530px;
+}
+.lang-hu .scene#adressdaten form #vorname, .lang-hu .scene#adressdaten form #nachname, .lang-hu .scene#adressdaten form #vorname_begleitung, .lang-hu .scene#adressdaten form #nachname_begleitung {
+	width: 190px;
+}
+.scene#adressdaten form #vorname, .scene#adressdaten form #nachname, .scene#adressdaten form #vorname_begleitung, .scene#adressdaten form #nachname_begleitung {
+	width: 200px;
+}
+.scene#adressdaten form #rsvp3 #strasse {
+	width: 375px;
+}
+.scene#adressdaten form #hnr, .scene#adressdaten form #plz {
+	width: 100px;
+}
+.scene#adressdaten form #ort, .scene#adressdaten form #land {
+	width: 173px;
+}
+.scene#adressdaten form #rsvp3 #email {
+	width: 503px;
+}
+
+.scene#adressdaten.singular form div#begleitungdata {
+	display: none;
+}
+/* fuer den Fall, dass nur die Begleitung kommt */
+.scene#adressdaten.singular.begleitung_only form div#guestdata div:first-child {
+	min-width: 220px;
+}
+.scene#adressdaten.singular.begleitung_only form div#begleitungdata {
+	display: block;
+	margin-top: -24px;
+}
+.scene#adressdaten.singular.begleitung_only form div#guestdata input, .scene#adressdaten.singular.begleitung_only form div#guestdata .vegetarier {
+	display: none;
+}
+.scene#adressdaten.singular.begleitung_only form div#begleitungdata label {
+	visibility: hidden;
+}
+.scene#adressdaten.singular.begleitung_only form div#begleitungdata .vegetarier label {
+	visibility: visible;
+}
+.scene#adressdaten.rsvp-n form .vegetarier {
+	display: none;
+}
+/* Kontakt */
+
+.scene#kontakt {
+	margin-bottom: 1300px;
+}
+.scene#kontakt h1 {
+	left: 30%;
+	top: 0px;
+	margin-left: -220px;
+}
+.scene#kontakt .content {
+	left: 30%;
+	top: 150px;
+	width: 420px;
+	margin-left: -220px;
+}
+.scene#kontakt .content p {
+	
+}
+.scene#kontakt .stage {
+	
+}
+.scene#kontakt .stage .transferTarget {
+	left: 50%;
+	top: 0px;
+}
+.scene#kontakt .stage .pinpaar {
+	left: 0px;
+	top: -150px;
+	width: 100%;
+	height: 700px;
+	overflow: hidden;
+}
+.scene#kontakt .stage .brautpaar {
+	left: 50%;
+	top: 150px;
+	width: 460px;
+}
+.scene#kontakt .stage .pinpaar .floor {
+	width: 390px;
+	top: 315px;
+	left: -100px;
+	background-image: url("../img/home/rsvp/boden.png");
+}
+.scene#kontakt.waiting .stage .pinpaar .floor {
+	display: none;
+}
+.scene#kontakt .stage .pinpaar .paar {
+	top: 35px;
+	left: 140px;
+}
+.scene#kontakt .stage .paar div#img {
+	background-image: url("../img/home/kontakt/paar-mittelefon.png");
+}
+.scene#kontakt .stage.kissing .paar div#img {
+	background-image: url("../img/home/kontakt/paar-kuessen1.png");
+}
+.scene#kontakt .stage.kissing .paar div#img.loop {
+	background-image: url("../img/home/kontakt/paar-kuessen2.png");
+}
+.scene#kontakt .stage.ende .paar div#img {
+	background-image: url("../img/home/rsvp/paar-normal.png");
+}
+.scene#kontakt .stage .paar.waving {
+	top: 36px;
+	left: 127px;
+}
+.scene#kontakt .stage .paar.waving div#img {
+	background-image: url("../img/home/kontakt/paar-winken1.png");
+}
+.scene#kontakt .stage .paar.waving div#img.loop {
+	background-image: url("../img/home/kontakt/paar-winken2.png");
+}
+.scene#kontakt .stage .noten {
+	width: 85px;
+	height: 120px;
+	top: 75px;
+	left: -70px;
+	background-image: url("../img/home/kontakt/noten.png");
+}
+.scene#kontakt .stage .voefely {
+	width: 325px;
+	height: 360px;
+	top: 400px;
+	left: -80px;
+	background-image: url("../img/home/kontakt/vofely1.png");
+}
+.scene#kontakt .stage .voefely.loop {
+	background-image: url("../img/home/kontakt/vofely2.png");
+}
+.scene#kontakt .stage .tor {
+	width: 620px;
+	height: 500px;
+	top: -75px;
+	left: -93px;
+	background-image: url("../img/home/kontakt/buehne.png");
+}
+
+
+
+.scene#credits {
+	margin-bottom: 400px;
+}
+.scene#credits h1 {
+	left: 30%;
+	top: 500px;
+	margin-left: -220px;
+}
+.scene#credits .content {
+	left: 50%;
+	top: 650px;
+	width: 400px;
+	margin-left: -200px;
+}
+.scene#credits ul {
+	margin: 20px 0 20px 0;
+}
+
+/* ende */
+.end {
+	height: 30px;
+}

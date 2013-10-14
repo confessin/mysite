@@ -1,0 +1,222 @@
+/* allgemein */
+form button {
+	margin-top: 20px;
+	height: 34px;
+	border: 0;
+	border-radius: 6px;
+	background-color: #FFFFFF;
+	box-shadow: 1px 1px 4px #A6A6A6;
+	font-family: "Arvo", serif;
+	font-size: 21px;
+	padding-right: 35px;
+	padding-left: 13px;
+	padding-top: 5px;
+	color: #A3276F;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: .05em;
+	background-image:url('../img/rsvp/btn-play.gif');
+	background-position: right -2px;
+	background-repeat: no-repeat;
+}
+form.sending button {
+	background-image:url('../img/rsvp/ani-wait.gif');
+}
+form button:disabled {
+	color: #b3b3b3;
+	background-image:url('../img/rsvp/btn-play-disabled.gif');
+}
+form button.successful, form button.successful:disabled {
+	color: #A3276F;
+	background-image: none;
+	padding-right: 13px;
+}
+input[type="radio"], input[type="checkbox"] {
+	display: none;
+}
+input[type="radio"] + label, input[type="checkbox"] + label {
+	font-size: 30px;
+	display: inline-block;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	padding-left: 50px;
+	color: #b3b3b3;
+	cursor: pointer;
+}
+input[type="radio"]:checked + label, input[type="checkbox"]:checked + label {
+	color: #A3276F;
+}
+input[type="checkbox"] + label {
+	background:url('../img/rsvp/checkbox_off.gif');
+	background-position: 0px 3px;
+	background-repeat: no-repeat;
+}
+input[type="checkbox"]:checked + label {
+	background:url('../img/rsvp/checkbox_on.gif');
+	background-position: 0px 3px;
+	background-repeat: no-repeat;
+}
+input {
+	background-color: #FFFFFF;
+	-moz-box-shadow: inset 1px 1px 4px #7f7f7f;
+	-webkit-box-shadow: inset 1px 1px 4px #7f7f7f;
+	box-shadow: inset 1px 1px 4px #7f7f7f;
+	border-radius: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 0px;
+	font-size: 30px;
+	height: 34px;
+	width: 170px;
+	line-height: 1.1em;
+}
+input:focus {
+	color: #A3276F;
+}
+input:disabled {
+	color: #b3b3b3;
+}
+
+/* specifics */
+#headline {
+	position: absolute;
+	top: 10%;
+	left: 50px;
+}
+#headline h1 {
+	color: #A3276F;
+	font-size: 54px;
+}
+div.rsvpform {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 350px;
+	width: 600px;
+	margin: -120px 0 0 -265px;
+}
+div.rsvpform p.copy {
+	width: 530px;
+}
+
+div.rsvpform form {
+	margin-top: 15px;
+}
+.content p .langesoe {
+	color: transparent;
+	background: url("../img/langes-oe-copy.png") no-repeat;
+	width: 7px;
+	height: 11px;
+	margin-right: 1px;
+	background-size: 100% 100%;
+	display: inline-block;
+}
+
+/* Erste Seite */
+
+#rsvp1 input[type="radio"]#r-yes + label {
+	background:url('../img/rsvp/rsvp_radio_yes_off.png');
+	background-repeat: no-repeat;
+}
+#rsvp1 input[type="radio"]#r-yes:checked + label {
+	background:url('../img/rsvp/rsvp_radio_yes_on.png');
+	background-repeat: no-repeat;
+}
+#rsvp1 input[type="radio"]#r-maybe + label {
+	background:url('../img/rsvp/rsvp_radio_maybe_off.png');
+	background-repeat: no-repeat;
+}
+#rsvp1 input[type="radio"]#r-maybe:checked + label {
+	background:url('../img/rsvp/rsvp_radio_maybe_on.png');
+	background-repeat: no-repeat;
+}
+#rsvp1 input[type="radio"]#r-no + label {
+	background:url('../img/rsvp/rsvp_radio_no_off.png');
+	background-repeat: no-repeat;
+}
+#rsvp1 input[type="radio"]#r-no:checked + label {
+	background:url('../img/rsvp/rsvp_radio_no_on.png');
+	background-repeat: no-repeat;
+}
+
+/* Zweite Seite */
+
+#rsvp2 input#zeremonie + label {
+	margin-right: 35px;
+}
+
+#rsvp2 input[type="radio"].paar + label {
+	background:url('../img/rsvp/rsvp_radio_paar_off.png');
+	background-repeat: no-repeat;
+}
+#rsvp2 input[type="radio"].paar:checked + label {
+	background:url('../img/rsvp/rsvp_radio_paar_on.png');
+	background-repeat: no-repeat;
+}
+#rsvp2 input[type="radio"].allein + label {
+	background:url('../img/rsvp/rsvp_radio_allein_off.png');
+	background-repeat: no-repeat;
+}
+#rsvp2 input[type="radio"].allein:checked + label {
+	background:url('../img/rsvp/rsvp_radio_allein_on.png');
+	background-repeat: no-repeat;
+}
+#rsvp2 p#onlyone, #rsvp2 div#bringsomeone {
+	display: none;
+}
+#rsvp2 div#bringsomeone {
+	padding-left: 40px;
+}
+#rsvp2 div#bringsomeone div {
+	padding-left: 10px;
+	float: left;
+}
+#rsvp2 div#bringsomeone label {
+	font-size: 14px;
+	display: inline-block;
+	color: #A3276F;
+}
+
+/* dritte Seite */
+
+div.rsvpform p#onlyone label {
+	margin-top: -12px;
+	margin-bottom: 0px;
+	height: 30px;
+}
+div.inputset {
+	margin-right: 3px;
+	margin-bottom: 8px;
+	display: inline-block;
+}
+div.inputset label {
+	color: #A3276F;
+	display: block;
+	line-height: 1.1em;
+}
+#rsvp3 #strasse, #rsvp3 #email {
+	width: 428px;
+}
+#hnr, #plz {
+	width: 117px;
+}
+#ort {
+	width: 190px;
+}
+#land {
+	width: 210px;
+}
+#vorname, #nachname, #vorname_begleitung, #nachname_begleitung {
+	width: 200px;
+}
+#rsvp3 form button {
+	margin-top: auto;
+	position: relative;
+	top: -4px;
+}
+div#rsvp3 input[type="checkbox"] + label {
+	width: 34px;
+	height: 34px;
+	display: inline;
+	background-position: -5px 0px;
+}
