@@ -1,0 +1,1006 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1em;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@keyframes soar {
+  50% {
+    transform: translate(0, -7px);
+  }
+}
+
+@-webkit-keyframes soar {
+  50% {
+    -webkit-transform: translate(0, -7px);
+  }
+}
+
+@-moz-keyframes soar {
+  50% {
+    -moz-transform: translate(0, -7px);
+  }
+}
+
+@keyframes striking {
+    0% { background-position: 0px -248px; opacity: 1.0; }
+    7% { background-position: 0px 0px; opacity: 1.0; }
+    10% { opacity: 0.1; }
+    100% { opacity: 0.0; }
+}
+
+@-webkit-keyframes striking {
+    0% { background-position: 0px -248px; opacity: 1.0; }
+    7% { background-position: 0px 0px; opacity: 1.0; }
+    50% { background-position: 0px 0px; opacity: 0.8; }
+    100% { opacity: 0.0; }
+}
+
+@-moz-keyframes striking {
+    0% { background-position: 0px -248px; opacity: 1.0; }
+    7% { background-position: 0px 0px; opacity: 1.0; }
+    50% { background-position: 0px 0px; opacity: 1.0; }
+    100% { opacity: 0.0; }
+}
+
+@-o-keyframes striking {
+    0% { background-position: 0px -248px; opacity: 1.0; }
+    7% { background-position: 0px 0px; opacity: 1.0; }
+    100% { opacity: 0.0; }
+}
+
+@keyframes drumming-up {
+    0% { background-position: right 0px; }
+    95% { background-position: right 5px; }
+}
+
+@-webkit-keyframes drumming-up {
+    0% { background-position: right 0px; }
+    95% { background-position: right 5px; }
+}
+
+@-moz-keyframes drumming-up {
+    0% { background-position: right 0px; }
+    95% { background-position: right 5px; }
+}
+
+@-o-keyframes drumming-up {
+    0% { background-position: right 0px; }
+    95% { background-position: right 5px; }
+}
+
+@-webkit-keyframes rocking {
+    30% {
+      -webkit-transform: rotate(1.5deg);
+      -moz-transform: rotate(1.5deg);
+      -o-transform: rotate(1.5deg);
+      transform: rotate(1.5deg);
+    }
+
+    60% {
+      -webkit-transform: rotate(-1.5deg);
+      -moz-transform: rotate(-1.5deg);
+      -o-transform: rotate(-1.5deg);
+      transform: rotate(-1.5deg);
+    }
+}
+
+@-o-keyframes rocking {
+    30% {
+      -webkit-transform: rotate(1.5deg);
+      -moz-transform: rotate(1.5deg);
+      -o-transform: rotate(1.5deg);
+      transform: rotate(1.5deg);
+    }
+
+    60% {
+      -webkit-transform: rotate(-1.5deg);
+      -moz-transform: rotate(-1.5deg);
+      -o-transform: rotate(-1.5deg);
+      transform: rotate(-1.5deg);
+    }
+}
+
+@-moz-keyframes rocking {
+    30% {
+      -webkit-transform: rotate(1.5deg);
+      -moz-transform: rotate(1.5deg);
+      -o-transform: rotate(1.5deg);
+      transform: rotate(1.5deg);
+    }
+
+    60% {
+      -webkit-transform: rotate(-1.5deg);
+      -moz-transform: rotate(-1.5deg);
+      -o-transform: rotate(-1.5deg);
+      transform: rotate(-1.5deg);
+    }
+}
+
+@keyframes rocking {
+    30% {
+      -webkit-transform: rotate(1.5deg);
+      -moz-transform: rotate(1.5deg);
+      -o-transform: rotate(1.5deg);
+      transform: rotate(1.5deg);
+    }
+
+    60% {
+      -webkit-transform: rotate(-1.5deg);
+      -moz-transform: rotate(-1.5deg);
+      -o-transform: rotate(-1.5deg);
+      transform: rotate(-1.5deg);
+    }
+}
+
+* {
+   margin: 0px;
+   padding: 0px;
+}
+
+html, body {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    min-width: 1024px;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+body {
+    background: #a7d3db; /* Old browsers */
+
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E3ZDNkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg4JSIgc3RvcC1jb2xvcj0iI2NmZGRjOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk0JSIgc3RvcC1jb2xvcj0iI2UyZTNjZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmY2VhYmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+
+    background: -moz-linear-gradient(top,  #a7d3db 0%, #cfddc9 88%, #e2e3ce 94%, #fceabd 100%); /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7d3db), color-stop(88%,#cfddc9), color-stop(94%,#e2e3ce), color-stop(100%,#fceabd)); /* Chrome,Safari4+ */
+
+    background: -webkit-linear-gradient(top,  #a7d3db 0%,#cfddc9 88%,#e2e3ce 94%,#fceabd 100%); /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top,  #a7d3db 0%,#cfddc9 88%,#e2e3ce 94%,#fceabd 100%); /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top,  #a7d3db 0%,#cfddc9 88%,#e2e3ce 94%,#fceabd 100%); /* IE10+ */
+
+    background: linear-gradient(to bottom,  #a7d3db 0%,#cfddc9 88%,#e2e3ce 94%,#fceabd 100%); /* W3C */
+
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7d3db', endColorstr='#fceabd',GradientType=0 ); /* IE6-8 */
+
+}
+
+footer {
+    position: relative;
+    height: 378px;
+    margin-top: -230px;
+    background: url('/css/img/ground.png') center no-repeat;
+    z-index: 0;
+}
+
+
+
+footer p {
+    position: absolute;
+    left: 50%;
+    margin-left: 350px;
+    bottom: 15px;
+    color: #677435;
+    font-size: 0.8em
+}
+
+footer p a, footer p a:active, footer p a:visited, footer p a:hover {
+    color: #677435;
+}
+
+footer p a:hover {
+    text-decoration: none;
+}
+
+#language-switcher {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    margin-left: 340px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 25px;
+    height: 32px;
+}
+
+#language-switcher a, #language-switcher a:visited, #language-switcher a:active {
+    color: #A3A5A5;
+    font-size: 0.8em;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+#language-switcher a:hover {
+    color: #83CFCB;
+}
+
+.sticky-wrapper {
+    position: relative;
+}
+
+#balloon {
+    position: fixed;
+    left: 50%;
+    margin-left: -304px;
+    margin-top: -190px;
+    width: 609px;
+    height: 940px;
+    background-repeat: no-repeat;
+    background: url('/css/img/balloon.png') no-repeat center top;
+    z-index: 100;
+}
+
+header {
+    top: 110px;
+    position: relative;
+    height: 255px;
+    background: url('/css/img/ribbon.png') center no-repeat;
+    z-index: 100;
+}
+
+header #ribbon {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 100%;
+}
+
+header div {
+    position: absolute;
+    text-shadow: 0px 1px 0px #ffffff;
+}
+
+header .title {
+    font-family: "Sreda", "Georgia", "Times New Roman", serif;
+    font-size: 3.7em;
+    color: #8E6454;
+    top: 45px;
+
+}
+
+header .subtitle {
+    font-family: "Georgia", serif;
+    font-size: 2.2em;
+    color: #9B7664;
+    top: 130px;
+
+}
+
+header .date {
+    left: 110px;
+}
+
+header .year {
+    right: 120px;
+}
+
+header .bride {
+    left: 25%;
+    -webkit-transform: rotate(353deg);
+    -moz-transform: rotate(353deg);
+    -o-transform: rotate(353deg);
+    transform: rotate(353deg);
+    writing-mode: lr-tb;
+}
+
+header .groom {
+    right: 0%;
+    margin-right: 30%;
+    -webkit-transform: rotate(7deg);
+    -moz-transform: rotate(7deg);
+    -o-transform: rotate(7deg);
+    transform: rotate(7deg);
+    writing-mode: lr-tb;
+}
+
+header span {
+
+}
+
+header span.left {
+
+}
+
+header span.right {
+
+}
+
+nav {
+    position: fixed;
+    bottom: 0px;
+    right: 50px;
+    z-index: 1000;
+}
+
+nav ul {
+    position: relative;
+    list-style: none;
+}
+
+nav ul li {
+    background: 0px 0px url('/css/img/hearts.png') no-repeat;
+    line-height: 0.7em;
+    margin-bottom: 32px;
+    height: 18px;
+    width: 18px;
+}
+
+nav ul li a {
+    display: none;
+    position: absolute;
+    right: 40px;
+    color: #F26A47;
+    text-decoration: none
+}
+
+nav ul li.selected {
+    background-position: 0px -18px;
+}
+
+html.no-touch nav ul li:hover {
+    cursor: pointer;
+    background-position: 0px -18px;
+}
+
+#the-meeting {
+    position: absolute;
+    left: 50%;
+    margin-left: -324px;
+    width: 647px;
+    height: 141px;
+    top: 20%;
+    background: url('/css/img/meeting.png') center no-repeat;
+    z-index: 100;
+}
+
+#lovers {
+    position: absolute;
+    left: 0px;
+    top: 35%;
+    width: 336px;
+    height: 280px;
+    background: url('/css/img/fall.png') no-repeat;
+    z-index: 200;
+}
+
+#the-cake {
+    width: 147px;
+    height: 169px;
+    background: url('/css/img/cake.png') no-repeat;
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    margin-left: -350px;
+}
+
+#party {
+    width: 209px;
+    height: 80px;
+    background: url('/css/img/party.png') no-repeat;
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    margin-left: 120px;
+}
+
+#house-island {
+    position: absolute;
+    top: 20%;
+    right: 0px;
+    width: 326px;
+    height: 269px;
+    background: url('/css/img/house.png') no-repeat;
+}
+
+#proposal-island {
+    position: absolute;
+    left: 0px;
+    top: 20%;
+    width: 338px;
+    height: 323px;
+    background: url('/css/img/proposal.png') no-repeat;
+    z-index: 200;
+}
+
+#slowpoke {
+    position: absolute;
+    right: 0px;
+    top: 20%;
+    width: 118px;
+    height: 243px;
+    background: url('/css/img/slowpoke.png') no-repeat;
+}
+
+.lightning {
+    width: 52px;
+    height: 248px;
+    position: absolute;
+    top: 240px;
+    left: 50%;
+    margin-left: -16px;
+    background: url('/css/img/flash.png') no-repeat;
+    z-index: 200;
+
+    animation-name: striking;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+
+    -webkit-animation-name: striking;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: striking;
+    -moz-animation-duration: 1s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-in-out;
+
+    -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+    -moz-animation-fill-mode:forwards; /*FF 5+*/
+    -o-animation-fill-mode:forwards; /*Not implemented yet*/
+    -ms-animation-fill-mode:forwards; /*IE 10+*/
+    animation-fill-mode:forwards; /*when the spec is finished*/
+}
+
+.moment {
+    position: relative;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 750px;
+}
+
+.moment.first {
+    margin-top: 250px;
+}
+
+.moment p {
+    position: absolute;
+    width: 250px;
+    top: 20%;
+    z-index: 10;
+    color: #666666;
+}
+
+.moment p.scroll-hint {
+    color: #FAFDFC;
+    font-family: "Sreda", "Georgia", "Times New Roman", serif;
+    background: url('/css/img/arrow.png') right 0px no-repeat;
+    padding-right: 17px;
+    width: 100px;
+    animation: drumming-up 0.8s linear infinite;
+    -o-animation: drumming-up 0.8s linear infinite;
+    -webkit-animation: drumming-up 0.8s linear infinite;
+    -moz-animation: drumming-up 0.8s linear infinite;
+}
+
+.moment p strong {
+    font-family: "Sreda", "Georgia", "Times New Roman", serif;
+    margin-top: 150px;
+    margin-bottom: 13px;
+    font-size: 1.5em;
+    line-height: 1em;
+    font-weight: 300;
+    display: block;
+    color: #F26A47;
+}
+
+.moment p.right {
+    /*right: 50px;*/
+    right: 0px;
+}
+
+.moment p.left {
+    /*margin-right: auto;*/
+    /*margin-left: 50px;*/
+}
+
+#zone-in-love p {
+    background: 85% 35% url('/css/img/leaves.png') no-repeat;
+}
+
+.cloud {
+    left: 50%;
+    position: absolute;
+    z-index: 0;
+    background-image: url('/css/img/clouds.png');
+    background-repeat: no-repeat;
+}
+
+.cloud-1 {
+    width: 143px;
+    height: 57px;
+    background-position: 0px 0px;
+}
+
+.cloud-2 {
+    width: 156px;
+    height: 64px;
+    background-position: 0px -57px;
+}
+
+.cloud-3 {
+    width: 308px;
+    height: 87px;
+    background-position: 0px -121px;
+}
+
+.cloud-4 {
+    width: 206px;
+    height: 81px;
+    background-position: 0px -208px;
+}
+
+.cloud-5 {
+    width: 188px;
+    height: 76px;
+    background-position: 0px -289px;
+}
+
+.cloud-6 {
+    width: 206px;
+    height: 81px;
+    background-position: 0px -365px;
+}
+
+.cloud-bird {
+    width: 48px;
+    height: 32px;
+    background: url('/css/img/bird.png');
+}
+
+.dark-cloud {
+    position: absolute;
+    z-index: 300;
+}
+
+.dark-cloud-1 {
+    width: 342px;
+    height: 132px;
+    background: url('/css/img/dark_cloud1.png') no-repeat;
+    top: 50px;
+    left: -100px;
+    z-index: 10;
+}
+
+.dark-cloud-2 {
+    width: 560px;
+    height: 195px;
+    background: url('/css/img/dark_cloud2.png') no-repeat;
+    left: 250px;
+    top: 50px;
+    opacity: 0.95;
+}
+
+.dark-cloud-3 {
+    top: -40px;
+    right: 0px;
+    width: 372px;
+    height: 127px;
+    background: url('/css/img/dark_cloud3.png') no-repeat;
+    z-index: 10;
+
+}
+
+.clouding {
+    animation: cloud 5s linear infinite;
+
+    -webkit-animation: cloud 5s linear infinite;
+
+    -moz-animation: cloud 5s linear infinite;
+
+    -o-animation: cloud 5s linear infinite;
+}
+
+.rocking {
+    animation: rocking 2s linear infinite;
+    -webkit-animation: rocking 2s linear infinite;
+    -moz-animation: rocking 2s linear infinite;
+    -o-animation: rocking 2s linear infinite;
+}
+
+.soaring {
+    animation-name: soar;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    -webkit-animation-name: soar;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+
+    -moz-animation-name: soar;
+    -moz-animation-duration: 4s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+    z-index: 30;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+  .moment p.scroll-hint {
+    background-image: url('/css/img/arrow@2x.png');
+    background-size: 17px 29px;
+  }
+
+  #balloon {
+    background-image: url('/css/img/balloon@2x.png');
+    background-size: 609px 940px;
+  }
+
+  .cloud-bird {
+    background-image: url('/css/img/bird@2x.png');
+    background-size: 48px 32px;
+  }
+
+  #the-cake {
+    background-image: url('/css/img/cake@2x.png');
+    background-size: 147px 169px;
+  }
+
+  .cloud {
+    background-image: url('/css/img/clouds@2x.png');
+    background-size: 308px 446px;
+  }
+
+  .dark-cloud-1 {
+    background-image: url('/css/img/dark_cloud1@2x.png');
+    background-size: 342px 132px;
+  }
+
+  .dark-cloud-2 {
+    background-image: url('/css/img/dark_cloud2@2x.png');
+    background-size: 560px 195px;
+  }
+
+  .dark-cloud-3 {
+    background-image: url('/css/img/dark_cloud3@2x.png');
+    background-size: 373px 127px;
+  }
+
+  #lovers {
+    background-image: url('/css/img/fall@2x.png');
+    background-size: 336px 280px;
+  }
+
+  .lightning {
+    background-image: url('/css/img/flash@2x.png');
+    background-size: 52px 248px;
+  }
+
+  footer {
+    background-image: url('/css/img/ground@2x.png');
+    background-size: 3028px 378px;
+  }
+
+  nav ul li {
+    background-image: url('/css/img/hearts@2x.png');
+    background-size: 20px 36px;
+  }
+
+  #house-island {
+    background-image: url('/css/img/house@2x.png');
+    background-size: 326px 269px;
+  }
+
+  #zone-in-love p {
+    background-image: url('/css/img/leaves@2x.png');
+    background-size: 70px 40px;
+  }
+
+  #the-meeting {
+    background-image: url('/css/img/meeting@2x.png');
+    background-size: 647px 141px;
+  }
+
+  #party {
+    background-image: url('/css/img/party@2x.png');
+    background-size: 209px 80px;
+  }
+
+  #proposal-island {
+    background-image: url('/css/img/proposal@2x.png');
+    background-size: 338px 323px;
+  }
+
+  header {
+    background-image: url('/css/img/ribbon@2x.png');
+    background-size: 1079px 245px;
+  }
+
+  #slowpoke {
+    background-image: url('/css/img/slowpoke@2x.png');
+    background-size: 116px 241px;
+  }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

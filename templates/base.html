@@ -71,7 +71,78 @@
                 position: sticky;
                 bottom: 27px;
             }
+            .switch {
+              position: relative;
+              display: inline-block;
+              width: 44px;
+              height: 26px;
+            }
+
+            .switch input { 
+              opacity: 0;
+              width: 0;
+              height: 0;
+            }
+
+            .slider {
+              position: absolute;
+              cursor: pointer;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: #ccc;
+              -webkit-transition: .4s;
+              transition: .4s;
+            }
+
+            .slider:before {
+              position: absolute;
+              content: "";
+              height: 18px;
+              width: 18px;
+              left: 4px;
+              bottom: 4px;
+              background-color: white;
+              -webkit-transition: .4s;
+              transition: .4s;
+            }
+
+            input:checked + .slider {
+              background-color: #59A54A;
+            }
+
+            input:focus + .slider {
+              box-shadow: 0 0 1px #59A54A;
+            }
+
+            input:checked + .slider:before {
+              -webkit-transform: translateX(18px);
+              -ms-transform: translateX(18px);
+              transform: translateX(18px);
+            }
+
+            /* Rounded sliders */
+            .slider.round {
+              border-radius: 34px;
+            }
+
+            .slider.round:before {
+              border-radius: 50%;
+            }
         </style>
+
+        <script type="text/javascript">
+          function toggleFluid() {
+            var checkBox = document.getElementById("toggleFluid");
+            var fluidBox = document.getElementById("fluid_canvas");
+            if (checkBox.checked == true){
+              fluidBox.style.display = "block";
+            } else {
+              fluidBox.style.display = "none";
+            }
+          }
+        </script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -80,8 +151,12 @@
         <div class="header-container">
             <header class="wrapper clearfix">
                 <h1 class="title">Mohammad Rafi</h1>
-                <br/>
-                <div class="title">&nbsp; &nbsp;&nbsp;&nbsp;Happy Holi?</div>
+                <div class="title">Fluid Effects
+                <label class="switch">
+                  <input id="toggleFluid" type="checkbox" onclick="toggleFluid()" checked>
+                  <span class="slider round"></span>
+                </label>
+                </div>
                 <nav>
                     <ul id="main_links">
                         <li><a href="/" title="A little about me.">Overview</a></li>
@@ -89,10 +164,11 @@
                         <li><a href="http://blog.mrafi.in">Blog</a></li>
                     </ul>
                 </nav>
+                
             </header>
         </div>
 
-        <canvas></canvas>
+        <canvas id="fluid_canvas"></canvas>
         <script src="/js/fluid/script.js"></script>
         <div class="main-container">
             <div class="main wrapper clearfix">

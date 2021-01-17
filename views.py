@@ -30,3 +30,8 @@ class InvitationPage(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('rafi_sehrin.htm')
         self.response.out.write(template.render({}))
+
+class AliInvitationPage(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('ali_henna.html')
+        self.response.out.write(template.render({}))
